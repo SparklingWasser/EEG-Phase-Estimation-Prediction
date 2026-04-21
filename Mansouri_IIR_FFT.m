@@ -21,7 +21,7 @@ data_filtered = sosfilt(sos, data);
 
 NFFT_padded = 20*fs;
 
-FFT = fft(data, NFFT_padded)/length(data_filtered);
+FFT = fft(data_filtered, NFFT_padded)/length(data_filtered);
 FFT_amp = 2*abs(FFT);
 f = linspace(0, fs/2, NFFT_padded/2+1);
 
